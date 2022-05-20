@@ -1,0 +1,18 @@
+{
+  "name": "ipfs-verifier",
+  "version": "1.0.0",
+  "description": "Verify downloaded IPFS content in client browser",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "tbc"
+  },
+  "author": "henryijs",
+  "license": "ISC",
+  "dependencies": {
+    "ipfs-unixfs-importer": "^9.0.8"
+  }
+}
