@@ -1,5 +1,6 @@
 const ipfsCidImporter = require('ipfs-unixfs-importer')
 const MemoryBlockstore = require('blockstore-core/memory')
+const Unixfs = require('ipfs-unixfs')
 const fs = require('fs')
 const path = require('path')
 
@@ -26,19 +27,26 @@ function listSubDirectoryFile(dirPath) {
 }
 
 async function getDirectoryCid(dirPath, fileName) {
-  console.log(dirPath + ' ' + fileName)
+  //console.log(dirPath + ' ' + fileName)
   const blockstore = new MemoryBlockstore.MemoryBlockstore()
+  const unixfs = new Unixfs.UnixFS({ type: 'file'})
   const source = [{
     cid: 'QmZXiu2EJ952cR4MgPi8o9NJbbhk88zxD4TtGHHjjyFiWB',
-    path: 'IJS_Tech.svg'
+    path: 'IJS_Tech.svg',
+    unixfs,
+    size: 9882
   },
   {
     cid: 'Qmc1HH1EhtHYScvocjPTp6DXz8rcEBJRKBzi4jtEHrWXUE',
-    path: 'icon.svg'
+    path: 'icon.svg',
+    unixfs,
+    size: 3245
   },
   {
     cid: 'QmSq2AyU9jPfUvTdCRsd6CL3RBqVUZbUYdvKHN9kfTVkRY',
-    path: 'tutor_Logo2.PNG'
+    path: 'tutor_Logo2.PNG',
+    unixfs,
+    size: 33040
   }
     //path: dirPath,
     //content: fs.createReadStream(fileName)
