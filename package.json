@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@ipld/dag-pb": "^2.1.17",
+    "ipfs-http-client": "^56.0.3",
     "ipfs-unixfs": "^6.0.9",
     "multiformats": "^9.6.5"
   }
